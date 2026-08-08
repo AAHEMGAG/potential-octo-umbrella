@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers, models
 #Note****** provide it with more practice images
-num_classes = 4
+num_classes = 2
 
 IMAGE_FOLDER = "Dataset"
 filenames = [f for f in os.listdir(IMAGE_FOLDER) if f.endswith(('.png', '.jpg', '.jpeg'))]
@@ -44,7 +44,12 @@ print("Min pixel value:", X_train.min())
 print("Max pixel value:", X_train.max())
 
 
-y_train = np.array([0, 1, 2, 3])  
+y_train = np.zeros(501, dtype=int)
+
+y_train = np.append(y_train, [1])
+
+print(y_train)
+
 
 
 # ==========================================
